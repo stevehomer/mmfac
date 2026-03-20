@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MeetupInvite;
 use App\Models\CoffeeShop;
 use App\Models\MeetupRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class MeetupController extends Controller
 {
@@ -33,6 +35,8 @@ class MeetupController extends Controller
             ...$validated,
             'user_id' => Auth::id(),
         ]);
+
+        Mail::to($meetup->invitee_email, $meetup->invitee_name)->send(new MeetupInvite($meetup));
 
         return redirect()->route('dashboard')
             ->with('success', "Invite sent to {$meetup->invitee_email}!");

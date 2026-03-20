@@ -1,4 +1,5 @@
 <x-guest-layout>
+    <h2 class="text-xl font-bold mb-6 text-center" style="color:#2d5a3d">Choose a new password</h2>
     <form method="POST" action="{{ route('password.store') }}">
         @csrf
 

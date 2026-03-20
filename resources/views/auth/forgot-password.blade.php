@@ -1,6 +1,7 @@
 <x-guest-layout>
+    <h2 class="text-xl font-bold mb-4 text-center" style="color:#2d5a3d">Reset your password</h2>
     <div class="mb-4 text-sm text-gray-600">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+        {{ __('Enter your email address and we\'ll send you a reset link.') }}
     </div>
 
     <!-- Session Status -->
